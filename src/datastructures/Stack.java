@@ -1,3 +1,5 @@
+package datastructures;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -8,7 +10,7 @@ public class Stack <T> implements Iterable<T>{
     // Create an empty stack
     public Stack() {}
 
-    // Create a Stack with an initial element
+    // Create a datastructures.Stack with an initial element
     public Stack(T firstElem) {
         push(firstElem);
     }

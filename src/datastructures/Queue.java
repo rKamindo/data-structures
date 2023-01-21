@@ -1,3 +1,5 @@
+package datastructures;
+
 import java.util.Iterator;
 
 public class Queue<T> implements Iterable<T>{
@@ -15,7 +17,7 @@ public class Queue<T> implements Iterable<T>{
         return list.size();
     }
 
-    // Returns whether or not the queue is empty
+    // Returns whether the queue is empty
     public boolean isEmpty() {
         return size() == 0;
     }
@@ -24,7 +26,7 @@ public class Queue<T> implements Iterable<T>{
     // The method throws an error if the queue is empty
     public T peek() {
         if (isEmpty())
-            throw new RuntimeException("Queue Empty");
+            throw new RuntimeException("datastructures.Queue Empty");
         return list.peekFirst();
     }
 
@@ -32,7 +34,7 @@ public class Queue<T> implements Iterable<T>{
     // The method throws an error if the queue is empty
     public T poll() {
         if (isEmpty())
-            throw new RuntimeException("Queue Empty");
+            throw new RuntimeException("datastructures.Queue Empty");
         return list.removeFirst();
     }
 

@@ -1,3 +1,5 @@
+package datastructures;
+
 public class UnionFind {
     // The number of elements in this union find
     private int size;
@@ -57,7 +59,7 @@ public class UnionFind {
         return sz[find(p)];
     }
 
-    // REturn the number of elements in this UnionFind/Disjoint set
+    // REturn the number of elements in this datastructures.UnionFind/Disjoint set
     public int size() {
         return size;
     }

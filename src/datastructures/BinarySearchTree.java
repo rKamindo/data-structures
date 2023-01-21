@@ -1,3 +1,5 @@
+package datastructures;
+
 public class BinarySearchTree <T extends Comparable> {
     // Tracks the number of nodes in this BST
     private int nodeCount = 0;
@@ -206,12 +208,12 @@ public class BinarySearchTree <T extends Comparable> {
         return Math.max(height(node.left), height(node.right)) + 1;
     }
 
-    // This method returns an iterator for a given TreeTraversalOrder.
+    // This method returns an iterator for a given datastructures.TreeTraversalOrder.
     // The ways in which you can traverse the tree are in four different ways:
     // preorder, inorder, postorder and levelorder.
 
     /*
-    public java.util.Iterator<T> traverse(TreeTraversalOrder order) {
+    public java.util.Iterator<T> traverse(datastructures.TreeTraversalOrder order) {
         switch (order) {
             case PRE_ORDER: return preOrderTraversal();
             case IN_ORDER: return inOrderTraversal();

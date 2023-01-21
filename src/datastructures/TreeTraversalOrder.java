@@ -1,3 +1,5 @@
+package datastructures;
+
 public enum TreeTraversalOrder {
     PRE_ORDER,
     IN_ORDER,

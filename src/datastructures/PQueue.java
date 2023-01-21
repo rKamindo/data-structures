@@ -1,4 +1,4 @@
-/**
+package datastructures; /**
  * A min priority queue implementation using a binary heap.
  * @author William FIset, william.alexandre.fiset@gmail.com
  */

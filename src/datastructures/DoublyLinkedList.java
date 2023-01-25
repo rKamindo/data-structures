@@ -128,7 +128,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         // Do a memory clean of the node that was just removed
         else tail.next = null;
 
-        // Return the data that was at the first node we just removed
+        // Return the data that was at the node we removed
         return data;
     }
 
@@ -138,6 +138,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         // If the node to remove is somewhere either at the
         // head or the tail handle those independently
         if (node.prev == null) return removeFirst();
+        if (node.next == null) return removeLast();
 
         // Make the pointers of the adjacent nodes skip over 'node'
         node.next.prev = node.prev;
@@ -225,9 +226,9 @@ public class DoublyLinkedList<T> implements Iterable<T> {
                     return index;
             }
         }
-
         return -1;
     }
+
 
     // Check if a value is contained within the linked list
     public boolean contains(Object obj) {

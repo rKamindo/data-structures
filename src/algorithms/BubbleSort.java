@@ -1,5 +1,7 @@
 package algorithms;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
     public static void sort(int[] arr) {
@@ -23,6 +25,7 @@ public class BubbleSort {
             }
         } while (!sorted);
     }
+
 
     private static void swap(int[] ar, int i, int j) {
         int tmp = ar[i];

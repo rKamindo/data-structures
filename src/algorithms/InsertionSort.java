@@ -24,7 +24,7 @@ public class InsertionSort {
             // compared element, and
             // until the compared element index is > 0
             for (j = i + 1; j > 0 && key < a[j - 1]; j--) {
-                a[j] = a[j - 1]; // shifts the elements
+                a[j] = a[j - 1]; // shift elements greater than key down in the array
             }
             a[j] = key; // insert at the correct position
         }

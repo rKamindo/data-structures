@@ -1,6 +1,5 @@
 package datastructures;
 
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class Array <T> implements Iterable<T> {
@@ -51,6 +50,8 @@ public class Array <T> implements Iterable<T> {
                 capacity = 1;
             else capacity *= 2; // double the size
             T[] new_arr = (T[]) new Object[capacity];
+            System.out.println("made a new array");
+            System.out.println("capacity: " + capacity);
             for (int i = 0; i < len; i++) {
                 new_arr[i] = arr[i];
             }
@@ -65,6 +66,7 @@ public class Array <T> implements Iterable<T> {
             throw new IndexOutOfBoundsException();
         T data = arr[rm_index];
         T[] new_arr = (T[]) new Object[len - 1];
+        System.out.println("made a new array and copied");
         for (int i = 0, j = 0; i < len; i++, j++) {
             if (i == rm_index)
                 j--; // Skip over rm_INDEX by fixing j temporarily
@@ -72,7 +74,7 @@ public class Array <T> implements Iterable<T> {
                 new_arr[j] = arr[i];
         }
         arr = new_arr;
-        capacity = --len;
+        System.out.println("shrunk the capacity to : " + len);
         return data;
     }
 
@@ -113,6 +115,15 @@ public class Array <T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new Iterator<T>() {
+            int index = 0;
+            public boolean hasNext() {
+                return index < len;
+            }
+
+            public T next() {
+                return arr[index++];
+            }
+        };
     }
 }

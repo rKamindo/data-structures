@@ -3,7 +3,7 @@ package datastructures;
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
-public class ArrayStack<T>{
+public class ArrayStack<T> {
     private int size;
     private int capacity;
     private T[] data;

@@ -1,17 +1,21 @@
 package datastructures;
 
+import java.util.Arrays;
+import java.util.EmptyStackException;
 import java.util.Queue;
 
 public class ArrayQueue<T> {
     private T[] data;
     private int front;
     private int rear;
+
     public ArrayQueue(int capacity) {
-        data = (T[]) new Object[capacity + 1]; // max array index is capacity - 1
+        data = (T[]) new Object[capacity + 1];
         front = 0;
         rear = 0;
     }
 
+    // adds an element to the front of the queue
     public void offer(T elem) {
         if (isFull())
             throw new RuntimeException("Queue is full");
@@ -19,9 +23,10 @@ public class ArrayQueue<T> {
         rear = adjustIndex(rear, data.length);
     }
 
+    // removes and returns the element at the front of the queue
     public T poll() {
         if (isEmpty())
-            throw new RuntimeException("Queue is empty");
+            throw new EmptyStackException();
         front = adjustIndex(front, data.length);
         return data[front++];
     }
@@ -34,7 +39,7 @@ public class ArrayQueue<T> {
         return (front + data.length - rear) % data.length == 1;
     }
 
-    private int adjustIndex(int index, int size) {
+    public int adjustIndex(int index, int size) {
         return index >= size ? index - size : index;
     }
 }

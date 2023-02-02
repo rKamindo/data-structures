@@ -4,49 +4,45 @@ import java.util.Arrays;
 import java.util.EmptyStackException;
 
 public class ArrayStack<T> {
+    private T[] stack;
     private int size;
     private int capacity;
-    private T[] data;
 
-    public ArrayStack() {
-        capacity = 16;
-        data = (T[]) new Object[capacity];
-    }
-
-    public int size() {
-        return size;
+    public ArrayStack(int capacity) {
+        stack = (T[]) new Object[capacity];
+        this.capacity = capacity;
+        size = 0;
     }
 
     public boolean isEmpty() {
         return size == 0;
     }
 
+    // adds an element to the top of the stack
     public void push(T elem) {
-        if (size == capacity) {
+        if (size == capacity) // time to resize
             increaseCapacity();
-        }
-        data[size++] = elem;
+        stack[size++] = elem;
     }
 
-    @SuppressWarnings("unchecked")
+    // removes and returns the element at the top of the stack
     public T pop() {
         if (isEmpty())
             throw new EmptyStackException();
-        T elem = data[--size];
-        data[size] = null;
-        return elem;
+        T data = stack[--size];
+        stack[size] = null;
+        return data;
     }
 
-    @SuppressWarnings("unchecked")
+    // returns the element at the top of the stack
     public T peek() {
         if (isEmpty())
             throw new EmptyStackException();
-        return data[size - 1];
+        return stack[size - 1];
     }
 
-    // increase the capacity to store more elements
     private void increaseCapacity() {
         capacity *= 2;
-        data = Arrays.copyOf(data, capacity);
+        stack = Arrays.copyOf(stack, capacity);
     }
 }

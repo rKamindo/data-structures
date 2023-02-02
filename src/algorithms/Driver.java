@@ -1,12 +1,14 @@
 package algorithms;
 
-import datastructures.Array;
-import datastructures.ArrayQueue;
+
+import datastructures.Stack;
 
 import java.util.Arrays;
 
 public class Driver {
     public static void main(String[] args) {
-        ArrayQueue<Integer> queue = new ArrayQueue<>(5);
+        int[] nums = {3, 13, -2, 55, 9, 4};
+        QuickSort.quickSort(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }

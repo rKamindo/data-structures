@@ -133,7 +133,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
     }
 
     // Remove an arbitrary node from the linked list, O(1)
-    public T remove (Node<T> node) {
+    public T remove(Node<T> node) {
 
         // If the node to remove is somewhere either at the
         // head or the tail handle those independently

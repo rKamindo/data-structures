@@ -7,7 +7,6 @@ public class MergeSort {
     }
 
     public static void mergeSort(int[] array, int[] temp, int leftStart, int rightEnd) {
-
         // out of bounds
         if (leftStart >= rightEnd)
             return;

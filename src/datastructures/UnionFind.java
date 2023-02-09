@@ -38,7 +38,7 @@ public class UnionFind {
 
         // Compress the path leading back to the root.
         // Doing this operation is called "path compression:
-        // and is what gives us ammortized constant time complexity
+        // and is what gives us amortized constant time complexity
         while (p != root) {
             int next = id[p];
             id[p] = root;
@@ -48,7 +48,7 @@ public class UnionFind {
         return root;
     }
 
-    // Return whether or not the elements 'p' and
+    // Return whether the elements 'p' and
     // 'q' are in the same components/set
     public boolean connected(int p, int q) {
         return find(p) == find(q);
@@ -59,7 +59,7 @@ public class UnionFind {
         return sz[find(p)];
     }
 
-    // REturn the number of elements in this datastructures.UnionFind/Disjoint set
+    // Return the number of elements in this datastructures.UnionFind/Disjoint set
     public int size() {
         return size;
     }
@@ -86,7 +86,7 @@ public class UnionFind {
         }
         else {
             sz[root1] += sz[root2];
-            id[root1] = id[root2];
+            id[root2] = id[root1];
         }
 
         // Since the roots found are different we know that the
